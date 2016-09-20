@@ -2,7 +2,9 @@ const Express = require('express');
 const app = Express();
 
 //
-// app.engine('html', require('ejs').renderFile);
+app.engine('html', require('ejs').renderFile);
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 app.use(Express.static('public'));
 
@@ -10,13 +12,23 @@ app.use(Express.static('public'));
 //   return response.send('Hello');
 // });
 
-// app.get('/products', (request, response) => {
-//   return response.send('My awesome products');
-// });
+app.get('/products', (request, response) => {
+  const products = {
+    name: 'Sham-wow!!!',
+      price: (3 * 19.99),
+      description: 'SUPPPPPER absorbent'
+  };
+
+  return response.render('products', {
+    products: products
+  });
+});
 
 
-app.get('/sports/:sport/qb/top-rated', (request, response) => {
+app.get('/sports/:sport/:position/top-rated', (request, response) => {
   const sport = request.params.sport;
+  const position = request.params.position;
+
   console.log(request.params);
   return response.send(`${sport}: Top Rated QB's`);
 });
