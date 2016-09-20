@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/helio-training/node-express-introduction#readme",
   "dependencies": {
+    "ejs": "^2.5.2",
     "express": "^4.14.0"
   }
 }
