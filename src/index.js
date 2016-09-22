@@ -1,10 +1,16 @@
 const Express = require('express');
 const app = Express();
 
+
+
 //
-app.engine('html', require('ejs').renderFile);
-app.set('views', './views');
-app.set('view engine', 'ejs');
+// app.engine('html', require('ejs').renderFile);
+// app.set('views', './views');
+// app.set('view engine', 'ejs');
+
+// http://expressjs.com/en/resources/middleware/body-parser.html
+app.use(require('body-parser').json());
+app.use(require('cors'));
 
 app.use(Express.static('public'));
 

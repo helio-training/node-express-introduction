@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/helio-training/node-express-introduction#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
     "ejs": "^2.5.2",
     "express": "^4.14.0"
   }
